@@ -15,7 +15,8 @@ from .Darknet import DarkNet
 @csrf_exempt
 def object_detection_api(api_request):
     json_object = {'success': False}
-
+    result = ''
+    detection_time = 0
     if api_request.method == "POST":
 
         if api_request.POST.get("image64", None) is not None:
